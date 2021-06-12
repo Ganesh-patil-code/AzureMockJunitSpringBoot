@@ -28,7 +28,7 @@ public class TestEmployeeRestController {
 	private MockMvc mockMvc;
 
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void testSaveEmployee() throws Exception {
 
@@ -52,7 +52,7 @@ public class TestEmployeeRestController {
 	}
 
 	@Test
-	@Disabled
+	//@Disabled
 	public void testGetAllEmployee() throws Exception
 	{
 		//1. Create Dummy Request or Object
@@ -72,7 +72,7 @@ public class TestEmployeeRestController {
 
 
 	@Test
-	@Disabled
+	//@Disabled
 	public void testGetOneEmployee() throws Exception
 	{
 		//1. Create Dummy Request or Object
@@ -94,7 +94,7 @@ public class TestEmployeeRestController {
 	}
 	
 	@Test
-	@Disabled
+	//@Disabled
 	public void testGetOneEmployeeNotExist() throws Exception {
 		// 1. Create One dummy object 
 		MockHttpServletRequestBuilder request = MockMvcRequestBuilders.get("/employee/one/30");
@@ -114,7 +114,7 @@ public class TestEmployeeRestController {
 	}
 	
 	@Test
-    @Disabled
+    //@Disabled
 	public void testDeleteEmployee() throws Exception {
 		
 		//1.create one dummy object
@@ -133,7 +133,7 @@ public class TestEmployeeRestController {
 	}
 	
 	@Test
-	@Disabled
+	//@Disabled
 	public void testDeleteEmployeeNotExist() throws Exception {
 		
 		//1. Create one dummy Request/object
@@ -151,13 +151,13 @@ public class TestEmployeeRestController {
 	}
 	
 	@Test
-	@Disabled
+	//@Disabled
 	public void testUpdateEmployee() throws Exception {
 		
 		//1. Create one dummy request/object
-		MockHttpServletRequestBuilder request = MockMvcRequestBuilders.put("/employee/update/1")
+		MockHttpServletRequestBuilder request = MockMvcRequestBuilders.put("/employee/update/3")
 				.contentType(MediaType.APPLICATION_JSON)
-				.content("{\"empId\": 1,\"empName\": \"ganesh\", \"empSal\": 10000}");
+				.content("{\"empId\": 3,\"empName\": \"ganesh\", \"empSal\": 10000}");
 		
 		//2. execute request and get response
 		MvcResult result = mockMvc.perform(request).andReturn();
@@ -176,9 +176,9 @@ public class TestEmployeeRestController {
 	public void testUpdateEmployeeNotExist() throws Exception {
 		
 		//1. Create one dummy request/object
-		MockHttpServletRequestBuilder request = MockMvcRequestBuilders.put("/employee/update/10")
+		MockHttpServletRequestBuilder request = MockMvcRequestBuilders.put("/employee/update/30")
 				.contentType(MediaType.APPLICATION_JSON)
-				.content("{\"empId\": 10,\"empName\": \"ABC\", \"empSal\": 9000}");
+				.content("{\"empId\": 30,\"empName\": \"ABC\", \"empSal\": 9000}");
 		
 		//2. execute request and get response
 		MvcResult result = mockMvc.perform(request).andReturn();
